@@ -1,0 +1,192 @@
+
+    
+    <!-- BEGIN: Content-->
+    <div class="app-content content " ng-controller="Usuario_controller">
+    <div ng-controller="Setores_controller">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <!-- users list start -->
+                <section class="app-user-list">
+                    <!-- users filter start -->
+                    <div class="card">
+                        <h5 class="card-header">Opções</h5>
+                        <div class="d-flex justify-content-between align-items-center mx-50 row pt-0 pb-2">
+                            <div class="col-md-4 user_role">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label for="">Filtrar Usuários:</label>
+                                    </div>
+                                    <div class="col-md-7">
+                                            <input ng-model="filerUsuario.nome" type="text" class="custom-input" >
+                                    </div>
+                                  
+                                </div>
+                            </div>
+                           
+                            <div class="col-md-4 user_status"></div>
+                        </div>
+                    </div>
+                    <!-- users filter end -->
+                    <!-- list section start -->
+                    <div class="card">
+                        <h5 class="card-header">Usuários Cadastrados</h5>
+                        <div class="card-datatable table-responsive pt-0">
+                           <div class="content">
+                            <div class="d-flex align-items-center justify-content-end">                                
+                                <button  type="button" class="btn btn-sm btn-default"  ng-mousedown="setupUsuario_modal(); frm_user.setores = null;">
+                                    <span  class="text-nowrap">Novo Usuario</span>
+                                </button>
+                            </div>
+                        </div>
+                            <table class="table" datatable="ng" dt-options="dtOptions">
+                                <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>nome</th>
+                                        <th>Tipo</th> 
+                                        <th>Email</th>   
+                                        <th>Telefone</th>  
+                                        <th>Ult. Atualiz.</th>
+                                        <th>Criada</th>                                        
+                                        <th>Ações</th>                                            
+                                    </tr>
+                                </thead>
+                                <tbody>   
+                                    <tr ng-repeat="item in usuarios_list | filter:filerUsuario  ">
+                                        <td ng-bind="item.idusuario"></td>                                       
+                                        <td ng-bind="item.nome"></td>                                        
+                                        <td >
+                                          <div ng-if="item.type_user == 'owner'" title="Dono e Gestor da conta registrada." class="btn btn-sm bootstrap-touchspin-down" style="background-color:#9b43ff; color:#fff; min-width: 80px;" ng-bind="item.type_user"></div>
+                                          <div ng-if="item.type_user == 'admin'" title="usuário administrador do sistema." class="btn btn-sm bootstrap-touchspin-down" style="background-color:#14bc4f; color:#fff; min-width: 80px;" ng-bind="item.type_user"></div>
+                                          <div ng-if="item.type_user == 'atendente'" title="usuário operador do atendimento." class="btn btn-sm bootstrap-touchspin-down" style="background-color:#43aaff; color:#fff; font-size:10px;" ng-bind="item.type_user"></div>
+                                        </td>
+                                        <td ng-bind="item.email"></td>                                                                         
+                                        <td ng-bind="item.telefone"></td>
+                                        <td >
+                                            <span ng-bind="item.updatedAt | date:'dd/MM/yyyy h:mma' "></span>
+                                          </td> 
+                                        <td >
+                                            <span ng-bind="item.createdAt | date "></span>
+                                          </td>                                 
+                                        <!--ações-->
+                                        <td>
+                                            <div class="dropdown">
+                                                <button type="button" class="btn btn-sm dropdown-toggle hide-arrow" data-toggle="dropdown">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                                                                  
+                                                    <a class="dropdown-item" href="javascript:void(0);" ng-mousedown="setupUsuario_modal(item)">
+                                                        <i data-feather="edit-2" class="mr-50"></i>
+                                                        <span>Editar</span>
+                                                    </a>
+
+                                                    <!-- deletar somente se a campanha estiver dentro do prazo -->
+                                                    <a ng-mousedown="confirma_exclusao_registro(item)" class="dropdown-item" href="javascript:void(0);">
+                                                        <i data-feather="trash" class="mr-50"></i>
+                                                        <span>Excluir</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                        </tbody>
+                    </table>
+                        </div>
+                        <!-- Modal to add new user starts-->
+                        <div class="modal modal-slide-in new-user-modal fade" id="setupUsuario_modal">
+                            <div class="modal-dialog">
+                                <form ng-submit="setupUsuario();" class=" modal-content pt-0">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+                                    <div class="modal-header mb-1">
+                                        <h5 class="modal-title" id="exampleModalLabel">Dados do Usuário: {{frm_user.nome}}</h5>
+                                    </div> 
+                                    <div class="modal-body flex-grow-1">                                     
+                                       
+
+                                        <div class="form-group">
+                                            <label ng-model="frm_user.nome" class="form-label" for="register-username">Nome</label>
+                                            <input  ng-model="frm_user.nome" class="form-control" id="nome" type="text" name="nome" placeholder="Jonas Alves Silva" aria-describedby="register-username" autofocus="" tabindex="1" required/>
+                                        </div>
+                                        <div class="form-group">
+                                          <label class="form-label" for="register-email">Telefone</label>
+                                          <input ng-model="frm_user.telefone" ui-br-phone-number-mask="" class="form-control" id="register-email" type="text" name="register-email" placeholder="(16) 9-9948-3490" aria-describedby="register-email" tabindex="2"  required/>
+                                      </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="register-username">CPF/CNPJ:</label>
+                                            <input  ng-model="frm_user.cpf" ng-blur="validCpfCnpj();"  class="form-control" id="cpf" type="text" name="cpf"  placeholder="ex.: 287.84764.234-40" aria-describedby="register-username" autofocus="" tabindex="3" ui-br-cpfcnpj-mask required />
+                                        </div>
+                                        <div class="form-group">
+                                            <label  class="form-label" for="register-username">Como você quer ser chamado?</label>
+                                            <input ng-model="frm_user.login" class="form-control" id="register-username" type="text" name="usuario" placeholder="ex.: Jonas872" aria-describedby="register-username" autofocus="" tabindex="4" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="register-email">Email</label>
+                                            <input ng-model="frm_user.email" ng-blur="verify_credenciais();" class="form-control" id="register-email" type="text" name="register-email" placeholder="john@example.com" aria-describedby="register-email" tabindex="5"  required/>
+                                        </div>
+                                        <div class="media d-flex align-items-center">
+                                            <h6 class="font-weight-bolder mr-auto mb-0">Alterar Senha</h6>
+                                            <div class="custom-control custom-control-primary custom-switch">
+                                              <input ng-model="opAltSenha" ng-true-value="'true'" ng-true-value="'false'" class="custom-control-input" id="altsenha" type="checkbox" >
+                                              <label class="custom-control-label" for="altsenha"></label>
+                                            </div>
+                                          </div>
+                                        <div class="form-group" ng-show="opAltSenha == 'true'">
+                                            <label class="form-label" for="register-password">Senha</label>
+                                            <div class="input-group input-group-merge form-password-toggle">
+                                                <input ng-model="frm_user.senha" class="form-control form-control-merge" id="senha" type="password" name="senha" placeholder="············" aria-describedby="register-password" tabindex="6" required/>
+                                                <div  class="input-group-append"><span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span></div>
+                                            </div>
+                                            <label class="form-label" for="register-password">Confirmar Senha</label>
+                                            <div class="input-group input-group-merge form-password-toggle">
+                                              <input ng-blur="confirmSenha();" ng-model="confSenha" class="form-control form-control-merge" id="confirmarSenha" type="password" name="confirmarSenha" placeholder="············" aria-describedby="register-password" tabindex="7" required />
+                                              <div class="input-group-append"><span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span></div>
+                                          </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="session">Perfil {{frm_user.type_user}}</label>
+                                           <select ng-disabled="frm_user.type_user == 'owner'" ng-model="frm_user.type_user"   class="custom-select col-lg-12 col-md-12 col-xs-12" required >
+                                              
+                                                <option ng-repeat="item in typeUser_list " value="{{item.name}}">{{item.name}}</option>
+                                           
+                                           </select>
+                                       </div>
+
+                                       <div class="form-group" >
+                                            <label>Setores </label>
+                                            <div class="form-group" >
+                                                <select  ng-model="frm_user.setores" class="select2 form-control" multiple="multiple" id="default-select-multi2" >
+                                                    <option ng-repeat="item in setor_list" value="{{item.id_setor}}" style="background-color:'{{item.cor}}';">
+                                                            {{item.nome}}
+                                                    </option>
+                                                
+                                                </select>
+                                            </div>
+                                        </div> 
+                                       
+                                      
+                                        <button type="submit" ng-enabled="frm_user" class="btn btn-success mr-1">Salvar</button>
+                                        <button type="button" ng-click="frm_user = {};" class="btn btn-primary mr-1">Limpar</button>
+                                        <button type="reset" ng-click="frm_user = {};" class="btn btn-outline-secondary" data-dismiss="modal">Fechar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Modal to add new user Ends-->
+                    </div>
+                    <!-- list section end -->
+                </section>
+                <!-- users list ends -->
+
+            </div>
+        </div>
+         <!-- modals -->     
+     <!-- <%- include('includes/modal/import_modal'); -%> -->
+ <!-- fim modals -->
+    </div>
+</div>
+    <!-- END: Content-->

@@ -1,0 +1,9 @@
+!node_modules/
+node_modules/*
+!node_modules/wppconnect/
+node_modules/wppconnect/node_modules/
+!docs/
+tmp/
+!public/
+public/files/avatar/
+tokens/

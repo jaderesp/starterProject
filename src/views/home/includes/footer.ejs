@@ -1,0 +1,147 @@
+
+ <!-- base_url -->
+ <input type="hidden" name="baseUrl" id="baseUrl" value="<%= baseUrl %>">
+ <input type="hidden" name="apiUrl" id="apiUrl" value="<%= apiUrl %>">
+ 
+
+ <!-- bootstrap 4 --> 
+  <!-- Footer -->
+  <div class="customizer-footer px-2">
+    <p class="font-weight-bold">Footer Type</p>
+    <div class="d-flex">
+      <div class="custom-control custom-radio mr-1">
+        <input type="radio" id="footer-type-sticky" name="footerType" class="custom-control-input" />
+        <label class="custom-control-label" for="footer-type-sticky">Sticky</label>
+      </div>
+      <div class="custom-control custom-radio mr-1">
+        <input type="radio" id="footer-type-static" name="footerType" class="custom-control-input" checked />
+        <label class="custom-control-label" for="footer-type-static">Static</label>
+      </div>
+      <div class="custom-control custom-radio mr-1">
+        <input type="radio" id="footer-type-hidden" name="footerType" class="custom-control-input" />
+        <label class="custom-control-label" for="footer-type-hidden">Hidden</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <!-- End: Customizer-->
+
+    <!-- Buynow Button-->
+    <div class="buy-now"><a href="https://1.envato.market/vuexy_admin" target="_blank" class="btn btn-danger">Buy Now</a>
+
+    </div>
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+    <!-- BEGIN: Footer-->
+    <footer class="footer footer-light">
+      <p class="clearfix mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">Marca Registrada © 2022<a class="ml-25" href="#" target="_blank">ZapSend</a><span class="d-none d-sm-inline-block">, Todos os Direitos Reservados.</span></span><span class="float-md-right d-none d-md-block">Desenvolvido com <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg> por JMSoft</span></p>
+    </footer>
+   
+    <!-- END: Footer-->
+
+    
+</div> <!--fim do controller Sistema_controller -->
+
+    <!-- BEGIN: Vendor JS-->
+    <script src="tamplate/app-assets/vendors/js/vendors.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="tamplate/app-assets/vendors/js/charts/apexcharts.min.js"></script>
+<!-- <script src="tamplate/app-assets/vendors/js/extensions/toastr.min.js"></script> -->
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="tamplate/app-assets/js/core/app-menu.min.js"></script>
+    <script src="tamplate/app-assets/js/core/app.min.js"></script>
+    <script src="tamplate/app-assets/js/scripts/customizer.min.js"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <!-- <script src="tamplate/app-assets/js/scripts/pages/dashboard-ecommerce.min.js"></script> -->
+    <!-- END: Page JS-->
+
+    <script>
+      $(window).on('load',  function(){
+        if (feather) {
+          feather.replace({ width: 14, height: 14 });
+        }
+      })
+    </script>
+  </body>
+  <!-- END: Body-->
+
+  
+    <!-- Angularjs  -->   
+    <!-- scripts comums -->
+    <script>
+      /* components angularjs */
+      var components = ['cp.ngConfirm','cgBusy','ngSanitize','datatables'];
+
+  </script>
+
+  <%- include('../../comum/angularjs'); -%>
+
+  <!-- codigo scrollbar-->
+  <script type="text/javascript">
+
+      var myScroll;
+      
+      async function loaded(altura_) {
+
+          return new Promise( async (resolve, reject) => {
+
+              if(myScroll){
+                  myScroll.destroy();
+              }
+              myScroll = null;
+              myScroll = new IScroll('#wrapper', {
+                  useTransition: true,
+                bottomOffset: altura_,
+                  scrollbars: true,
+                  mouseWheel: true,
+                  interactiveScrollbars: true,
+                  shrinkScrollbars: 'scale',
+                  fadeScrollbars: true
+              });
+            
+              
+              if(myScroll){
+                  resolve(true);
+              }
+
+
+
+              /* rolar pagina ao bottom */
+              //$( "#wrapper" ).scrollTop(altura_);
+              //$("#scroller").animate({ scrollTop: altura_}, 1000);
+              var scroll=$('#wrapper');
+              scroll.animate({scrollTop: altura_});
+
+              /* setTimeout(function() {
+                  $('#scroller').css({'transform' : 'translate(0px, ' + altura_ + 'px)'});
+              }, 1000); */
+
+          });
+      }
+
+      document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+      
+     /* document.addEventListener('touchmove', function (e) { e.preventDefault(); }, isPassive() ? {
+          capture: false,
+          passive: false
+      } : false); */
+
+     
+      
+      </script>
+
+  
+
+  <!-- angularjs controllers -->    
+  <script src="angular/angularjs/controllers/sistema/home/Dashboard_controller.js"></script>
+  
+</html>

@@ -1,0 +1,114 @@
+<div class="modal-size-lg d-inline-block">
+
+    <!-- Modal -->
+    <div class="modal fade text-left" id="import_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel17" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+    
+                 <!-- qrcode status -->
+                   
+                        <div class="modal-header text-center">
+                            <h4 class="modal-title" id="myModalLabel17">Importar Contato da Sessão {{sessaoImport.nome_sess}} <span id="modaltitle"></span></h4>
+                           
+                        </div>
+                        <div class="modal-body text-center" >                        
+                              
+                             <!-- tabela lista de contatos do chip oara importação -->
+                                <div class="row" >
+                                    <div class="col-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title">Importar contatos para o banco de dados</h4>
+                                                <div id="loaderContactsImport">
+
+                                                </div>
+                                            </div>
+                                            <div class="card-body" >
+                                                <p class="card-text">
+                                                    Lista de contatos extraídas do chip {{sessaoImport.number_sess}}.
+                                                </p>
+                                                <div class="col-md-12 " ng-show="contatosSession_list.length > 0">
+                                                    <div class="col-md-5 align-items-right">
+                                                        <label for="pesquisar">Pesquisar:</label>
+                                                        <input type="text" class="form-control" ng-model="filtroContacts" placeholder="pesquisar por nome">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div  class="table-responsive " style="max-height:400px;" >
+                                                <table class="table table-striped " id="tabela">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input id="checkAllContacts" ng-model="checked" ng-true-value="true" ng-false-value="false" ng-value="false" ng-mousedown="chekcAllContact()" class="form-check-input" type="checkbox" value="false" title="Selecionar Todos os registros." >
+                                                                </div>
+                                                            </th>
+                                                            <th>Avatar</th>
+                                                            <th>WhatsApp</th>
+                                                            <th>Nome</th>
+                                                            <th>Agenda</th>
+                                                            <th>Status</th>
+                                                           
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody style="height: 10px !important; overflow: scroll; ">
+                                                        <tr ng-repeat="item in contatosSession_list | filter: {'nome':filtroContacts}" >
+                                                            <td>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input ng-model="item.checkImport" ng-false-value="'false'" ng-true-value="'true'" id="check_{{item.number | somenteNumberos}}" ng-value="'false'" class="form-check-input" type="checkbox" ng-mousedown="chekcAllContact(item.number);">
+                                                                </div>
+                                                            </td>
+                                                            <td>                                                                
+                                                                <span class="avatar" ng-click="setup_modal(item)">
+                                                                    <img ng-if="!item.profilePic" src="/files/wapi/download/avatar/default.png" height="32" width="32" alt="Generic placeholder image" />
+                                                                    <img ng-if="item.profilePic" src="{{item.profilePic}}" height="32" width="32" alt="Generic placeholder image" />
+                                                                    <!-- notificação nova mensagem --> 
+                                                                    <span class="avatar-status-online"></span>                                                   
+                                                                </span>
+                                                            </td>
+                                                            <td ng-bind="item.number"></td>
+                                                            <!-- nom do contato-->
+                                                            <td>
+                                                                <spam  ng-bind="item.nome"></spam>                         
+                                                            </td>
+                                                            
+                                                            <!-- fim  nom do contato -->
+                                                            <!-- esta na agenda do telefone-->
+                                                            <td>
+                                                                <spam ng-if="item.isContact == true">
+                                                                    Sim 
+                                                                </spam>
+                                                                <spam ng-if="item.isContact == false">
+                                                                    Não
+                                                                </spam>
+                                                            </td>
+                                                           
+                                                            <!-- fim esta na agenda do telefone-->
+                                                            <td>
+                                                                <span class="badge badge-pill badge-light-primary mr-1" ng-bind="item.status">
+
+                                                                </span>
+                                                            </td>
+                                                          
+                                                        </tr>
+                                                     
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Table head options end -->
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" >Importar 
+                                <span ng-show="contatosSession_list.length > 0" ng-click="importContatosSession();" ng-bind="contatosSession_list.length + ' contatos.'"></span>
+                            </button>
+                           <button type="button" ng-click="PreviewImage == null" class="btn btn-default" data-dismiss="modal">Fechar</button>                       
+                        </div>
+    
+            </div>
+        </div>
+    </div>
+    </div>

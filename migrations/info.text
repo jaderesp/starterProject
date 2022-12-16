@@ -1,0 +1,5 @@
+como proceder para executar as migrations:
+
+executar migrations (criar tabelas):
+# using npm
+npx sequelize-cli db:migrate

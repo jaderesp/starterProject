@@ -1,0 +1,173 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Users\\JMsoft-Desenv\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'angular-sanitize@X.Y.Z',
+1 verbose cli   '--save'
+1 verbose cli ]
+2 info using npm@3.10.10
+3 info using node@v12.13.1
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData angular-sanitize@X.Y.Z
+8 silly fetchNamedPackageData angular-sanitize
+9 silly mapToRegistry name angular-sanitize
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'angular-sanitize',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   escapedName: 'angular-sanitize',
+12 silly mapToRegistry   name: 'angular-sanitize',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag'
+12 silly mapToRegistry }
+13 silly mapToRegistry uri https://registry.npmjs.org/angular-sanitize
+14 verbose request uri https://registry.npmjs.org/angular-sanitize
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 14:54:38
+17 verbose request id 7bc242e0c56d71a3
+18 verbose etag W/"ccbca1c6c8743e342d94c0a49ef755f3"
+19 verbose lastModified Tue, 19 Nov 2019 09:31:42 GMT
+20 http request GET https://registry.npmjs.org/angular-sanitize
+21 http 304 https://registry.npmjs.org/angular-sanitize
+22 verbose headers {
+22 verbose headers   date: 'Wed, 04 Mar 2020 17:54:38 GMT',
+22 verbose headers   connection: 'keep-alive',
+22 verbose headers   'set-cookie': [
+22 verbose headers     '__cfduid=d76784db01fa80fbb5c09ac98c65f3e1f1583344478; expires=Fri, 03-Apr-20 17:54:38 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax'
+22 verbose headers   ],
+22 verbose headers   'cf-ray': '56ed76ad2f1df5f7-GRU',
+22 verbose headers   age: '4358',
+22 verbose headers   'cache-control': 'public, max-age=300',
+22 verbose headers   etag: '"ccbca1c6c8743e342d94c0a49ef755f3"',
+22 verbose headers   'last-modified': 'Tue, 19 Nov 2019 09:31:42 GMT',
+22 verbose headers   vary: 'Accept-Encoding',
+22 verbose headers   'cf-cache-status': 'HIT',
+22 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+22 verbose headers   server: 'cloudflare'
+22 verbose headers }
+23 silly get cb [
+23 silly get   304,
+23 silly get   {
+23 silly get     date: 'Wed, 04 Mar 2020 17:54:38 GMT',
+23 silly get     connection: 'keep-alive',
+23 silly get     'set-cookie': [
+23 silly get       '__cfduid=d76784db01fa80fbb5c09ac98c65f3e1f1583344478; expires=Fri, 03-Apr-20 17:54:38 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax'
+23 silly get     ],
+23 silly get     'cf-ray': '56ed76ad2f1df5f7-GRU',
+23 silly get     age: '4358',
+23 silly get     'cache-control': 'public, max-age=300',
+23 silly get     etag: '"ccbca1c6c8743e342d94c0a49ef755f3"',
+23 silly get     'last-modified': 'Tue, 19 Nov 2019 09:31:42 GMT',
+23 silly get     vary: 'Accept-Encoding',
+23 silly get     'cf-cache-status': 'HIT',
+23 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+23 silly get     server: 'cloudflare'
+23 silly get   }
+23 silly get ]
+24 verbose etag https://registry.npmjs.org/angular-sanitize from cache
+25 verbose get saving angular-sanitize to C:\Users\JMsoft-Desenv\AppData\Roaming\npm-cache\registry.npmjs.org\angular-sanitize\.cache.json
+26 verbose correctMkdir C:\Users\JMsoft-Desenv\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+27 silly fetchNamedPackageData No valid target from cache, forcing network
+28 verbose request uri https://registry.npmjs.org/angular-sanitize
+29 verbose request no auth needed
+30 info attempt registry request try #1 at 14:54:39
+31 http request GET https://registry.npmjs.org/angular-sanitize
+32 http 200 https://registry.npmjs.org/angular-sanitize
+33 verbose headers {
+33 verbose headers   date: 'Wed, 04 Mar 2020 17:54:38 GMT',
+33 verbose headers   'content-type': 'application/json',
+33 verbose headers   'transfer-encoding': 'chunked',
+33 verbose headers   connection: 'keep-alive',
+33 verbose headers   'set-cookie': [
+33 verbose headers     '__cfduid=d76784db01fa80fbb5c09ac98c65f3e1f1583344478; expires=Fri, 03-Apr-20 17:54:38 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax'
+33 verbose headers   ],
+33 verbose headers   'cf-ray': '56ed76adbff8f5f7-GRU',
+33 verbose headers   age: '4358',
+33 verbose headers   'cache-control': 'public, max-age=300',
+33 verbose headers   etag: 'W/"ccbca1c6c8743e342d94c0a49ef755f3"',
+33 verbose headers   'last-modified': 'Tue, 19 Nov 2019 09:31:42 GMT',
+33 verbose headers   vary: 'accept-encoding, accept',
+33 verbose headers   'cf-cache-status': 'HIT',
+33 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+33 verbose headers   server: 'cloudflare',
+33 verbose headers   'content-encoding': 'gzip'
+33 verbose headers }
+34 silly get cb [
+34 silly get   200,
+34 silly get   {
+34 silly get     date: 'Wed, 04 Mar 2020 17:54:38 GMT',
+34 silly get     'content-type': 'application/json',
+34 silly get     'transfer-encoding': 'chunked',
+34 silly get     connection: 'keep-alive',
+34 silly get     'set-cookie': [
+34 silly get       '__cfduid=d76784db01fa80fbb5c09ac98c65f3e1f1583344478; expires=Fri, 03-Apr-20 17:54:38 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax'
+34 silly get     ],
+34 silly get     'cf-ray': '56ed76adbff8f5f7-GRU',
+34 silly get     age: '4358',
+34 silly get     'cache-control': 'public, max-age=300',
+34 silly get     etag: 'W/"ccbca1c6c8743e342d94c0a49ef755f3"',
+34 silly get     'last-modified': 'Tue, 19 Nov 2019 09:31:42 GMT',
+34 silly get     vary: 'accept-encoding, accept',
+34 silly get     'cf-cache-status': 'HIT',
+34 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+34 silly get     server: 'cloudflare',
+34 silly get     'content-encoding': 'gzip'
+34 silly get   }
+34 silly get ]
+35 verbose get saving angular-sanitize to C:\Users\JMsoft-Desenv\AppData\Roaming\npm-cache\registry.npmjs.org\angular-sanitize\.cache.json
+36 verbose correctMkdir C:\Users\JMsoft-Desenv\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+37 silly fetchPackageMetaData Error: No compatible version found: angular-sanitize@X.Y.Z
+37 silly fetchPackageMetaData Valid install targets:
+37 silly fetchPackageMetaData 1.7.9, 1.7.8, 1.7.7, 1.7.6, 1.7.5, 1.7.4, 1.7.3, 1.7.2, 1.7.1, 1.7.0, 1.7.0-rc.0, 1.6.10, 1.6.9, 1.6.8, 1.6.7, 1.6.6, 1.6.5, 1.6.4, 1.6.3, 1.6.2, 1.6.1, 1.6.0, 1.6.0-rc.2, 1.6.0-rc.1, 1.6.0-rc.0, 1.5.11, 1.5.10, 1.5.9, 1.5.8, 1.5.7, 1.5.6, 1.5.5, 1.5.3, 1.5.2, 1.5.1, 1.5.0, 1.5.0-rc.2, 1.5.0-rc.1, 1.5.0-rc.0, 1.5.0-beta.2, 1.5.0-beta.0, 1.4.14, 1.4.13, 1.4.12, 1.4.11, 1.4.10, 1.4.9, 1.4.8, 1.4.7, 1.4.6, 1.4.5, 1.4.4, 1.4.3, 1.4.2, 1.4.1, 1.4.0, 1.4.0-rc.2, 1.4.0-rc.1, 1.4.0-rc.0, 1.4.0-beta.6, 1.4.0-beta.5, 1.4.0-beta.4, 1.4.0-beta.3, 1.4.0-beta.2, 1.4.0-beta.1, 1.4.0-beta.0, 1.3.20, 1.3.19, 1.3.18, 1.3.17, 1.3.16, 1.3.15, 1.3.14, 1.3.13, 1.3.12, 1.3.11, 1.3.10, 1.3.9, 1.3.8, 1.3.7, 1.3.6, 1.3.5, 1.3.4, 1.3.4-build.3587, 1.3.3, 1.3.2, 1.3.1, 1.3.0, 1.3.0-rc.5, 1.2.32, 1.2.31, 1.2.30, 1.2.29, 1.2.28, 1.2.27, 0.0.1
+37 silly fetchPackageMetaData
+37 silly fetchPackageMetaData     at pickVersionFromRegistryDocument (C:\Users\JMsoft-Desenv\AppData\Roaming\npm\node_modules\npm\lib\fetch-package-metadata.js:178:16)
+37 silly fetchPackageMetaData     at C:\Users\JMsoft-Desenv\AppData\Roaming\npm\node_modules\npm\node_modules\iferr\index.js:13:50
+37 silly fetchPackageMetaData     at C:\Users\JMsoft-Desenv\AppData\Roaming\npm\node_modules\npm\lib\utils\pulse-till-done.js:20:8
+37 silly fetchPackageMetaData     at saved (C:\Users\JMsoft-Desenv\AppData\Roaming\npm\node_modules\npm\lib\cache\caching-client.js:174:7)
+37 silly fetchPackageMetaData     at C:\Users\JMsoft-Desenv\AppData\Roaming\npm\node_modules\npm\node_modules\graceful-fs\polyfills.js:241:18
+37 silly fetchPackageMetaData     at FSReqCallback.oncomplete (fs.js:146:23)
+37 silly fetchPackageMetaData  error for angular-sanitize@X.Y.Z Error: No compatible version found: angular-sanitize@X.Y.Z
+37 silly fetchPackageMetaData Valid install targets:
+37 silly fetchPackageMetaData 1.7.9, 1.7.8, 1.7.7, 1.7.6, 1.7.5, 1.7.4, 1.7.3, 1.7.2, 1.7.1, 1.7.0, 1.7.0-rc.0, 1.6.10, 1.6.9, 1.6.8, 1.6.7, 1.6.6, 1.6.5, 1.6.4, 1.6.3, 1.6.2, 1.6.1, 1.6.0, 1.6.0-rc.2, 1.6.0-rc.1, 1.6.0-rc.0, 1.5.11, 1.5.10, 1.5.9, 1.5.8, 1.5.7, 1.5.6, 1.5.5, 1.5.3, 1.5.2, 1.5.1, 1.5.0, 1.5.0-rc.2, 1.5.0-rc.1, 1.5.0-rc.0, 1.5.0-beta.2, 1.5.0-beta.0, 1.4.14, 1.4.13, 1.4.12, 1.4.11, 1.4.10, 1.4.9, 1.4.8, 1.4.7, 1.4.6, 1.4.5, 1.4.4, 1.4.3, 1.4.2, 1.4.1, 1.4.0, 1.4.0-rc.2, 1.4.0-rc.1, 1.4.0-rc.0, 1.4.0-beta.6, 1.4.0-beta.5, 1.4.0-beta.4, 1.4.0-beta.3, 1.4.0-beta.2, 1.4.0-beta.1, 1.4.0-beta.0, 1.3.20, 1.3.19, 1.3.18, 1.3.17, 1.3.16, 1.3.15, 1.3.14, 1.3.13, 1.3.12, 1.3.11, 1.3.10, 1.3.9, 1.3.8, 1.3.7, 1.3.6, 1.3.5, 1.3.4, 1.3.4-build.3587, 1.3.3, 1.3.2, 1.3.1, 1.3.0, 1.3.0-rc.5, 1.2.32, 1.2.31, 1.2.30, 1.2.29, 1.2.28, 1.2.27, 0.0.1
+37 silly fetchPackageMetaData
+37 silly fetchPackageMetaData     at pickVersionFromRegistryDocument (C:\Users\JMsoft-Desenv\AppData\Roaming\npm\node_modules\npm\lib\fetch-package-metadata.js:178:16)
+37 silly fetchPackageMetaData     at C:\Users\JMsoft-Desenv\AppData\Roaming\npm\node_modules\npm\node_modules\iferr\index.js:13:50
+37 silly fetchPackageMetaData     at C:\Users\JMsoft-Desenv\AppData\Roaming\npm\node_modules\npm\lib\utils\pulse-till-done.js:20:8
+37 silly fetchPackageMetaData     at saved (C:\Users\JMsoft-Desenv\AppData\Roaming\npm\node_modules\npm\lib\cache\caching-client.js:174:7)
+37 silly fetchPackageMetaData     at C:\Users\JMsoft-Desenv\AppData\Roaming\npm\node_modules\npm\node_modules\graceful-fs\polyfills.js:241:18
+37 silly fetchPackageMetaData     at FSReqCallback.oncomplete (fs.js:146:23) {
+37 silly fetchPackageMetaData   code: 'ETARGET'
+37 silly fetchPackageMetaData }
+38 silly rollbackFailedOptional Starting
+39 silly rollbackFailedOptional Finishing
+40 silly runTopLevelLifecycles Finishing
+41 silly install printInstalled
+42 verbose stack Error: No compatible version found: angular-sanitize@X.Y.Z
+42 verbose stack Valid install targets:
+42 verbose stack 1.7.9, 1.7.8, 1.7.7, 1.7.6, 1.7.5, 1.7.4, 1.7.3, 1.7.2, 1.7.1, 1.7.0, 1.7.0-rc.0, 1.6.10, 1.6.9, 1.6.8, 1.6.7, 1.6.6, 1.6.5, 1.6.4, 1.6.3, 1.6.2, 1.6.1, 1.6.0, 1.6.0-rc.2, 1.6.0-rc.1, 1.6.0-rc.0, 1.5.11, 1.5.10, 1.5.9, 1.5.8, 1.5.7, 1.5.6, 1.5.5, 1.5.3, 1.5.2, 1.5.1, 1.5.0, 1.5.0-rc.2, 1.5.0-rc.1, 1.5.0-rc.0, 1.5.0-beta.2, 1.5.0-beta.0, 1.4.14, 1.4.13, 1.4.12, 1.4.11, 1.4.10, 1.4.9, 1.4.8, 1.4.7, 1.4.6, 1.4.5, 1.4.4, 1.4.3, 1.4.2, 1.4.1, 1.4.0, 1.4.0-rc.2, 1.4.0-rc.1, 1.4.0-rc.0, 1.4.0-beta.6, 1.4.0-beta.5, 1.4.0-beta.4, 1.4.0-beta.3, 1.4.0-beta.2, 1.4.0-beta.1, 1.4.0-beta.0, 1.3.20, 1.3.19, 1.3.18, 1.3.17, 1.3.16, 1.3.15, 1.3.14, 1.3.13, 1.3.12, 1.3.11, 1.3.10, 1.3.9, 1.3.8, 1.3.7, 1.3.6, 1.3.5, 1.3.4, 1.3.4-build.3587, 1.3.3, 1.3.2, 1.3.1, 1.3.0, 1.3.0-rc.5, 1.2.32, 1.2.31, 1.2.30, 1.2.29, 1.2.28, 1.2.27, 0.0.1
+42 verbose stack
+42 verbose stack     at pickVersionFromRegistryDocument (C:\Users\JMsoft-Desenv\AppData\Roaming\npm\node_modules\npm\lib\fetch-package-metadata.js:178:16)
+42 verbose stack     at C:\Users\JMsoft-Desenv\AppData\Roaming\npm\node_modules\npm\node_modules\iferr\index.js:13:50
+42 verbose stack     at C:\Users\JMsoft-Desenv\AppData\Roaming\npm\node_modules\npm\lib\utils\pulse-till-done.js:20:8
+42 verbose stack     at saved (C:\Users\JMsoft-Desenv\AppData\Roaming\npm\node_modules\npm\lib\cache\caching-client.js:174:7)
+42 verbose stack     at C:\Users\JMsoft-Desenv\AppData\Roaming\npm\node_modules\npm\node_modules\graceful-fs\polyfills.js:241:18
+42 verbose stack     at FSReqCallback.oncomplete (fs.js:146:23)
+43 verbose cwd C:\xampp\htdocs\hullo-dev\hullo\public\library
+44 error Windows_NT 10.0.18362
+45 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\JMsoft-Desenv\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "install" "--save" "angular-sanitize@X.Y.Z" "--save"
+46 error node v12.13.1
+47 error npm  v3.10.10
+48 error code ETARGET
+49 error notarget No compatible version found: angular-sanitize@X.Y.Z
+49 error notarget Valid install targets:
+49 error notarget 1.7.9, 1.7.8, 1.7.7, 1.7.6, 1.7.5, 1.7.4, 1.7.3, 1.7.2, 1.7.1, 1.7.0, 1.7.0-rc.0, 1.6.10, 1.6.9, 1.6.8, 1.6.7, 1.6.6, 1.6.5, 1.6.4, 1.6.3, 1.6.2, 1.6.1, 1.6.0, 1.6.0-rc.2, 1.6.0-rc.1, 1.6.0-rc.0, 1.5.11, 1.5.10, 1.5.9, 1.5.8, 1.5.7, 1.5.6, 1.5.5, 1.5.3, 1.5.2, 1.5.1, 1.5.0, 1.5.0-rc.2, 1.5.0-rc.1, 1.5.0-rc.0, 1.5.0-beta.2, 1.5.0-beta.0, 1.4.14, 1.4.13, 1.4.12, 1.4.11, 1.4.10, 1.4.9, 1.4.8, 1.4.7, 1.4.6, 1.4.5, 1.4.4, 1.4.3, 1.4.2, 1.4.1, 1.4.0, 1.4.0-rc.2, 1.4.0-rc.1, 1.4.0-rc.0, 1.4.0-beta.6, 1.4.0-beta.5, 1.4.0-beta.4, 1.4.0-beta.3, 1.4.0-beta.2, 1.4.0-beta.1, 1.4.0-beta.0, 1.3.20, 1.3.19, 1.3.18, 1.3.17, 1.3.16, 1.3.15, 1.3.14, 1.3.13, 1.3.12, 1.3.11, 1.3.10, 1.3.9, 1.3.8, 1.3.7, 1.3.6, 1.3.5, 1.3.4, 1.3.4-build.3587, 1.3.3, 1.3.2, 1.3.1, 1.3.0, 1.3.0-rc.5, 1.2.32, 1.2.31, 1.2.30, 1.2.29, 1.2.28, 1.2.27, 0.0.1
+50 error notarget This is most likely not a problem with npm itself.
+50 error notarget In most cases you or one of your dependencies are requesting
+50 error notarget a package version that doesn't exist.
+51 verbose exit [ 1, true ]

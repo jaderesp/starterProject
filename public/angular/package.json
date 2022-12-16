@@ -1,0 +1,22 @@
+{
+  "name": "jmsoftos",
+  "version": "1.0.0",
+  "description": "Sistema de Gerenciamento de Ordem de serviços e faturamentos, cobrança e controle.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jader Espírito Santo Silva",
+  "license": "ISC",
+  "dependencies": {
+    "@cgross/angular-busy": "^4.1.4",
+    "angular": "^1.7.9",
+    "angular-datatables": "^0.6.4",
+    "angular-input-masks": "^4.4.1",
+    "angular-locale-pt-br": "^1.3.16",
+    "angular-sanitize": "^1.7.9",
+    "angularjs-bootstrap-multiselect": "^0.6.0",
+    "jquery-mask-plugin": "^1.14.16",
+    "moment": "^2.27.0"
+  }
+}

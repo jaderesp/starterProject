@@ -1,0 +1,375 @@
+
+  <!-- BEGIN: Content-->
+  <div class="app-content content " ng-controller="Dashboard_controller">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+      <div class="content-header row">
+      </div>
+      <div class="content-body"><!-- Dashboard Ecommerce Starts -->
+<section id="dashboard-ecommerce">
+<div class="row match-height">
+  <!-- mue plano -->
+  <div class="col-xl-6 col-md-6 col-12" ng-if="plano_ativo">
+    <div class="card card-congratulation-medal">
+      <div class="card-body">
+        <h5>
+          <spam ng-bind="plano_ativo.titulo"></spam>
+
+           <spam ng-if="plano_ativo.status == 'ativo'" ng-bind=" '🎉' + plano_ativo.status + '!'"></spam>
+           <spam ng-if="plano_ativo.status == 'inativo'" ng-bind=" '🕒' + plano_ativo.status"></spam>
+        </h5>
+
+        <p class="card-text font-small-3 col-11">
+          <spam ng-bind="plano_ativo.descricao"></spam>
+        </p>
+        <h3 class="mb-75 mt-2 pt-50">
+          <a href="javascript:void(0);">
+            <spam ng-bind="plano_ativo.valor | currency"></spam>
+          </a>
+        </h3>
+
+       
+          <a ng-show="plano_ativo.status == 'ativo'" href="minha_conta" class="btn btn-primary  btn-sm text-right">Escolher Plano</a>
+          <a ng-show="plano_ativo.status == 'inativo'" href="minha_conta" class="btn btn-warning  btn-sm text-right">Assinatura Pendente</a>
+          <img src="tamplate/app-assets/images/illustration/badge.svg" class="congratulation-medal" alt="Medal Pic" />
+        
+       
+      </div>
+    </div>
+  </div>
+  <!--/ meu plano -->
+
+  <!-- Statistics Card -->
+  <div class="col-xl-6 col-md-6 ">
+    <div class="card card-statistics">
+      <div class="card-header">
+        <h4 class="card-title">Estatisticas</h4>
+        <div class="d-flex align-items-center">
+          <p class="card-text font-small-2 mr-25 mb-0" ng-bind="'Atualizado em ' + (updateData | date: 'dd/MM/yyyy HH:mm:ss')">
+
+          </p>
+        </div>
+      </div>
+      <div class="card-body statistics-body">
+        <div class="row">
+          <!-- qtde campanhas enviadas -->
+          <div class="col-xl-6 col-sm-6 mb-2 mb-xl-0">
+            <div class="media">
+              <div class="avatar bg-light-primary mr-2">
+                <div class="avatar-content">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                </div>
+              </div>
+              <div class="media-body my-auto">
+                <h4 class="font-weight-bolder mb-0">
+                  <spam ng-if="campInfo.enviadas" ng-bind="campInfo.enviadas + '/' + campInfo.cadastradas"></spam>
+                  <spam ng-if="!campInfo.enviadas" ng-bind="'0/0'"></spam>
+                  
+                </h4>
+                <p class="card-text font-small-3 mb-0">Campanhas Enviadas</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- qtde de contatos cadastrados -->
+          <div class="col-xl-6 col-sm-6 mb-2 mb-xl-0">
+            <div class="media">
+              <div class="avatar bg-light-info mr-2">
+                <div class="avatar-content">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+              </div>
+              <div class="media-body my-auto">
+                <h4 class="font-weight-bolder mb-0">
+                  <spam ng-bind="contatosQtde"></spam>
+                </h4>
+                <p class="card-text font-small-3 mb-0">Contatos</p>
+              </div>
+            </div>
+          </div>
+
+
+          
+
+        <!--<div class="col-xl-3 col-sm-6 col-12 mb-2 mb-sm-0">
+            <div class="media">
+              <div class="avatar bg-light-danger mr-2">
+                <div class="avatar-content">
+                  <i data-feather="box" class="avatar-icon"></i>
+                </div>
+              </div>
+              <div class="media-body my-auto">
+                <h4 class="font-weight-bolder mb-0">1.423k</h4>
+                <p class="card-text font-small-3 mb-0">Products</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 col-12">
+            <div class="media">
+              <div class="avatar bg-light-success mr-2">
+                <div class="avatar-content">
+                  <i data-feather="dollar-sign" class="avatar-icon"></i>
+                </div>
+              </div>
+              <div class="media-body my-auto">
+                <h4 class="font-weight-bolder mb-0">$9745</h4>
+                <p class="card-text font-small-3 mb-0">Revenue</p>
+              </div>
+            </div>  
+          </div> -->
+
+        </div>
+        
+      </div>
+
+
+      
+
+    </div>
+  </div>
+  <!--/ Statistics Card -->
+
+
+
+              <!-- graficos de contatos cadastrados -->
+              <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                <div class="card card-revenue-budget">
+                  <div class="row mx-0">
+                    <div class="col-md-10 col-12 revenue-report-wrapper">
+                      <div class="d-sm-flex justify-content-between align-items-center mb-3">
+                        <h4 class="card-title mb-50 mb-sm-0">Desempenho de captação diária:</h4>
+                        <div class="d-flex align-items-center">
+                          <div class="d-flex align-items-center mr-2">
+                            <span class="bullet bullet-primary font-small-3 mr-50 cursor-pointer"></span>
+                            <span>Contatos por dia</span>
+                          </div>
+                    <!-- <div class="d-flex align-items-center ml-75">
+                            <span class="bullet bullet-warning font-small-3 mr-50 cursor-pointer"></span>
+                            <span>Expense</span>
+                          </div> -->
+                        </div> 
+                      </div>
+                      <!-- grafico de cadastro de contatos-->
+                      <div id="graficoContatos"></div>
+                    </div>
+                    <div class="col-md-2 col-12 budget-wrapper">
+
+                      <p class="card-text font-small-3 mb-0">Período</p>
+                      <div class="row" ng-init="titulo = 'Últimos 7 dias';">
+                        
+                        <button
+                          type="button"
+                          class="btn btn-outline-primary btn-sm dropdown-toggle budget-dropdown"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                        <spam ng-bind="titulo"></spam>
+                        </button>
+                        <div class="dropdown-menu">
+                          <a ng-mousedown="getContactDataGraf(-7); titulo = 'Último 7 dias.';" class="dropdown-item" href="javascript:void(0);">Últimos 7 dias</a>
+                          <a ng-mousedown="getContactDataGraf(-14); titulo = 'Último 14 dias.';" ng-mousedown="getContactDataGraf(-14)" class="dropdown-item" href="javascript:void(0);">Últimos 14 dias</a>
+                          <a ng-mousedown="getContactDataGraf(-30); titulo = 'Último 30 dias.';" class="dropdown-item" href="javascript:void(0);">Últimos 30 dias</a>
+                          <a ng-mousedown="getContactDataGraf(-60); titulo = 'Último 60 dias.';" class="dropdown-item" href="javascript:void(0);">Últimos 60 dias</a>              
+                        </div>
+                        
+                      </div>
+                      <div class="col-12">
+                        <buttom ng-mousedown="getContactDataGraf(qtdeDias)" class="btn btn-primary  btn-sm text-center">Filtrar</buttom>
+                      </div>
+                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/ graficos de contatos cadastrados -->
+
+</div>
+<!--
+<div class="row match-height">
+  <div class="col-lg-4 col-12">
+    <div class="row match-height">
+    
+      <div class="col-lg-6 col-md-3 col-6">
+        <div class="card">
+          <div class="card-body pb-50">
+            <h6>Orders</h6>
+            <h2 class="font-weight-bolder mb-1">2,76k</h2>
+            <div id="statistics-order-chart"></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-lg-6 col-md-3 col-6">
+        <div class="card card-tiny-line-stats">
+          <div class="card-body pb-50">
+            <h6>Profit</h6>
+            <h2 class="font-weight-bolder mb-1">6,24k</h2>
+            <div id="statistics-profit-chart"></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-lg-12 col-md-6 col-12">
+        <div class="card earnings-card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-6">
+                <h4 class="card-title mb-1">Earnings</h4>
+                <div class="font-small-2">This Month</div>
+                <h5 class="mb-1">$4055.56</h5>
+                <p class="card-text text-muted font-small-2">
+                  <span class="font-weight-bolder">68.2%</span><span> more earnings than last month.</span>
+                </p>
+              </div>
+              <div class="col-6">
+                <div id="earnings-chart"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div> -->
+
+  
+</div>
+
+</section>
+<!-- Dashboard Ecommerce ends -->
+
+      </div>
+    </div>
+  </div>
+  <!-- END: Content-->
+
+
+  <!-- BEGIN: Customizer-->
+  <div class="customizer d-none d-md-block"><a class="customizer-toggle d-flex align-items-center justify-content-center" href="javascript:void(0);"><i class="spinner" data-feather="settings"></i></a><div class="customizer-content">
+<!-- Customizer header -->
+<div class="customizer-header px-2 pt-1 pb-0 position-relative">
+  <h4 class="mb-0">Theme Customizer</h4>
+  <p class="m-0">Customize & Preview in Real Time</p>
+
+  <a class="customizer-close" href="javascript:void(0);"><i data-feather="x"></i></a>
+</div>
+
+<hr />
+
+<!-- Styling & Text Direction -->
+<div class="customizer-styling-direction px-2">
+  <p class="font-weight-bold">Skin</p>
+  <div class="d-flex">
+    <div class="custom-control custom-radio mr-1">
+      <input
+        type="radio"
+        id="skinlight"
+        name="skinradio"
+        class="custom-control-input layout-name"
+        checked
+        data-layout=""
+      />
+      <label class="custom-control-label" for="skinlight">Light</label>
+    </div>
+    <div class="custom-control custom-radio mr-1">
+      <input
+        type="radio"
+        id="skinbordered"
+        name="skinradio"
+        class="custom-control-input layout-name"
+        data-layout="bordered-layout"
+      />
+      <label class="custom-control-label" for="skinbordered">Bordered</label>
+    </div>
+    <div class="custom-control custom-radio mr-1">
+      <input
+        type="radio"
+        id="skindark"
+        name="skinradio"
+        class="custom-control-input layout-name"
+        data-layout="dark-layout"
+      />
+      <label class="custom-control-label" for="skindark">Dark</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input
+        type="radio"
+        id="skinsemidark"
+        name="skinradio"
+        class="custom-control-input layout-name"
+        data-layout="semi-dark-layout"
+      />
+      <label class="custom-control-label" for="skinsemidark">Semi Dark</label>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<!-- Menu -->
+<div class="customizer-menu px-2">
+  <div id="customizer-menu-collapsible" class="d-flex">
+    <p class="font-weight-bold mr-auto m-0">Menu Collapsed</p>
+    <div class="custom-control custom-control-primary custom-switch">
+      <input type="checkbox" class="custom-control-input" id="collapse-sidebar-switch" />
+      <label class="custom-control-label" for="collapse-sidebar-switch"></label>
+    </div>
+  </div>
+</div>
+<hr />
+
+<!-- Layout Width -->
+<div class="customizer-footer px-2">
+  <p class="font-weight-bold">Layout Width</p>
+  <div class="d-flex">
+    <div class="custom-control custom-radio mr-1">
+      <input type="radio" id="layout-width-full" name="layoutWidth" class="custom-control-input" checked />
+      <label class="custom-control-label" for="layout-width-full">Full Width</label>
+    </div>
+    <div class="custom-control custom-radio mr-1">
+      <input type="radio" id="layout-width-boxed" name="layoutWidth" class="custom-control-input" />
+      <label class="custom-control-label" for="layout-width-boxed">Boxed</label>
+    </div>
+  </div>
+</div>
+<hr />
+
+<!-- Navbar -->
+<div class="customizer-navbar px-2">
+  <div id="customizer-navbar-colors">
+    <p class="font-weight-bold">Navbar Color</p>
+    <ul class="list-inline unstyled-list">
+      <li class="color-box bg-white border selected" data-navbar-default=""></li>
+      <li class="color-box bg-primary" data-navbar-color="bg-primary"></li>
+      <li class="color-box bg-secondary" data-navbar-color="bg-secondary"></li>
+      <li class="color-box bg-success" data-navbar-color="bg-success"></li>
+      <li class="color-box bg-danger" data-navbar-color="bg-danger"></li>
+      <li class="color-box bg-info" data-navbar-color="bg-info"></li>
+      <li class="color-box bg-warning" data-navbar-color="bg-warning"></li>
+      <li class="color-box bg-dark" data-navbar-color="bg-dark"></li>
+    </ul>
+  </div>
+
+  <p class="navbar-type-text font-weight-bold">Navbar Type</p>
+  <div class="d-flex">
+    <div class="custom-control custom-radio mr-1">
+      <input type="radio" id="nav-type-floating" name="navType" class="custom-control-input" checked />
+      <label class="custom-control-label" for="nav-type-floating">Floating</label>
+    </div>
+    <div class="custom-control custom-radio mr-1">
+      <input type="radio" id="nav-type-sticky" name="navType" class="custom-control-input" />
+      <label class="custom-control-label" for="nav-type-sticky">Sticky</label>
+    </div>
+    <div class="custom-control custom-radio mr-1">
+      <input type="radio" id="nav-type-static" name="navType" class="custom-control-input" />
+      <label class="custom-control-label" for="nav-type-static">Static</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input type="radio" id="nav-type-hidden" name="navType" class="custom-control-input" />
+      <label class="custom-control-label" for="nav-type-hidden">Hidden</label>
+    </div>
+  </div>
+</div>
+<hr />

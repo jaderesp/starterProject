@@ -1,0 +1,30 @@
+{
+  "name": "angularjs-bootstrap-multiselect",
+  "version": "0.6.0",
+  "description": "A multiselect dropdown list for AngularJS styled to fit the Twitter Bootstrap standard design",
+  "main": "angular-bootstrap-multiselect.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfmdev/angular-bootstrap-multiselect.git"
+  },
+  "keywords": [
+    "sngular",
+    "angularjs",
+    "directive",
+    "ui",
+    "bootstrap",
+    "input",
+    "multiselect",
+    "dropdown",
+    "select"
+  ],
+  "author": "Sebastian Hammerl and Amitava Saha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jfmdev/angular-bootstrap-multiselect/issues"
+  },
+  "homepage": "https://github.com/jfmdev/angular-bootstrap-multiselect#readme"
+}
