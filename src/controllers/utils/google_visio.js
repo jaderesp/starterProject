@@ -37,4 +37,4 @@ module.exports.getImageData = async (imageDir) => {
 
     });
 
-});
+}
