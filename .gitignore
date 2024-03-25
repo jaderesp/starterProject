@@ -7,3 +7,5 @@ tmp/
 !public/
 public/files/avatar/
 tokens/
+!config/
+config/credentials/
